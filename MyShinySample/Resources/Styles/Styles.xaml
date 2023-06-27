@@ -1,0 +1,846 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+	 xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+	 <Style
+		  TargetType="ActivityIndicator">
+		  <Setter
+				Property="Color"
+				Value="{DynamicResource Primary}" />
+	 </Style>
+
+
+	 <Style
+		  TargetType="IndicatorView">
+		  <Setter
+				Property="IndicatorColor"
+				Value="{DynamicResource Gray200}" />
+		  <Setter
+				Property="SelectedIndicatorColor"
+				Value="{DynamicResource Gray950}" />
+	 </Style>
+
+	 <Style
+		  TargetType="Border">
+		  <Setter
+				Property="Stroke"
+				Value="{DynamicResource PrimaryDark}" />
+		  <Setter
+				Property="StrokeShape"
+				Value="Rectangle" />
+		  <Setter
+				Property="StrokeThickness"
+				Value="3" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="Transparent" />
+	 </Style>
+
+	 <Style
+		  TargetType="BoxView">
+		  <Setter
+				Property="Color"
+				Value="{DynamicResource Gray950}" />
+	 </Style>
+
+	 <Style
+		  TargetType="Button">
+		  <Setter
+				Property="FontFamily"
+				Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+		  <Setter
+				Property="FontSize"
+				Value="Small" />
+		  <Setter
+				Property="CornerRadius"
+				Value="0" />
+		  <Setter
+				Property="Padding"
+				Value="14,10" />
+		  <Setter
+				Property="MinimumHeightRequest"
+				Value="44" />
+		  <Setter
+				Property="MinimumWidthRequest"
+				Value="44" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource White}" />
+									 <Setter
+										  Property="Background"
+										  Value="{DynamicResource Primary}" />
+								</VisualState.Setters>
+						  </VisualState>
+
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Gray950}" />
+									 <Setter
+										  Property="Background"
+										  Value="{DynamicResource Gray200}" />
+								</VisualState.Setters>
+						  </VisualState>
+
+						  <VisualState
+								x:Name="Pressed">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Primary}" />
+									 <Setter
+										  Property="Background"
+										  Value="{DynamicResource PrimaryAccent}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="CheckBox">
+		  <Setter
+				Property="Color"
+				Value="{StaticResource PrimaryDark}" />
+		  <Setter
+				Property="MinimumHeightRequest"
+				Value="44" />
+		  <Setter
+				Property="MinimumWidthRequest"
+				Value="44" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal">
+								<VisualState.Setters>
+									 <Setter
+										  Property="Color"
+										  Value="{StaticResource PrimaryDark}" />
+								</VisualState.Setters>
+						  </VisualState>
+						  <VisualState
+								x:Name="IsChecked">
+								<VisualState.Setters>
+									 <Setter
+										  Property="Color"
+										  Value="{StaticResource PrimaryDark}" />
+								</VisualState.Setters>
+						  </VisualState>
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="Color"
+										  Value="{StaticResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="DatePicker">
+		  <Setter
+				Property="TextColor"
+				Value="{DynamicResource Gray900}" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="Transparent" />
+		  <Setter
+				Property="FontFamily"
+				Value="OpenSansRegular" />
+		  <Setter
+				Property="FontSize"
+				Value="Small" />
+		  <Setter
+				Property="MinimumHeightRequest"
+				Value="44" />
+		  <Setter
+				Property="MinimumWidthRequest"
+				Value="44" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Gray200}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="Editor">
+		  <Setter
+				Property="TextColor"
+				Value="{DynamicResource PrimaryDark}" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="Transparent" />
+		  <Setter
+				Property="FontFamily"
+				Value="OpenSansRegular" />
+		  <Setter
+				Property="FontSize"
+				Value="Small" />
+		  <Setter
+				Property="PlaceholderColor"
+				Value="{DynamicResource Gray200}" />
+
+		  <Setter
+				Property="MinimumHeightRequest"
+				Value="44" />
+		  <Setter
+				Property="MinimumWidthRequest"
+				Value="44" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="Entry">
+		  <Setter
+				Property="Margin"
+				Value="10,0" />
+		  <!--<Setter
+         Property="ClearButtonVisibility"
+         Value="WhileEditing" />-->
+		  <Setter
+				Property="TextColor"
+				Value="{DynamicResource PrimaryDark}" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="Transparent" />
+		  <Setter
+				Property="FontFamily"
+				Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+		  <Setter
+				Property="FontSize"
+				Value="Small" />
+		  <Setter
+				Property="PlaceholderColor"
+				Value="{DynamicResource Gray500}" />
+		  <Setter
+				Property="MinimumHeightRequest"
+				Value="44" />
+		  <Setter
+				Property="MinimumWidthRequest"
+				Value="44" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="Frame">
+		  <Setter
+				Property="HasShadow"
+				Value="False" />
+		  <Setter
+				Property="BorderColor"
+				Value="{DynamicResource PrimaryDark}" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="White" />
+		  <Setter
+				Property="CornerRadius"
+				Value="0" />
+		  <Setter
+				Property="VerticalOptions"
+				Value="FillAndExpand" />
+		  <Setter
+				Property="HorizontalOptions"
+				Value="FillAndExpand" />
+	 </Style>
+
+	 <Style
+		  TargetType="ImageButton">
+		  <Setter
+				Property="Opacity"
+				Value="1" />
+		  <Setter
+				Property="BorderColor"
+				Value="Transparent" />
+		  <Setter
+				Property="BorderWidth"
+				Value="0" />
+		  <Setter
+				Property="CornerRadius"
+				Value="0" />
+		  <Setter
+				Property="MinimumHeightRequest"
+				Value="44" />
+		  <Setter
+				Property="MinimumWidthRequest"
+				Value="44" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="Opacity"
+										  Value="0.5" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="Label">
+		  <Setter
+				Property="FontAutoScalingEnabled"
+				Value="False" />
+		  <Setter
+				Property="TextColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="Transparent" />
+		  <Setter
+				Property="FontFamily"
+				Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+		  <Setter
+				Property="FontSize"
+				Value="Medium" />
+		  <Setter
+				Property="HorizontalTextAlignment"
+				Value="Start" />
+		  <Setter
+				Property="VerticalTextAlignment"
+				Value="Center" />
+		  <Setter
+				Property="FontAttributes"
+				Value="Bold" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="ListView">
+		  <Setter
+				Property="SeparatorColor"
+				Value="{DynamicResource Gray200}" />
+		  <Setter
+				Property="RefreshControlColor"
+				Value="{DynamicResource Gray900}" />
+	 </Style>
+
+	 <Style
+		  TargetType="Picker">
+		  <Setter
+				Property="FontAutoScalingEnabled"
+				Value="False" />
+		  <Setter
+				Property="TextColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="TitleColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="Transparent" />
+		  <Setter
+				Property="FontFamily"
+				Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+		  <Setter
+				Property="FontSize"
+				Value="Small" />
+		  <Setter
+				Property="MinimumHeightRequest"
+				Value="44" />
+		  <Setter
+				Property="MinimumWidthRequest"
+				Value="44" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Gray300}" />
+									 <Setter
+										  Property="TitleColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="ProgressBar">
+		  <Setter
+				Property="ProgressColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="ProgressColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="RadioButton">
+		  <Setter
+				Property="BackgroundColor"
+				Value="Transparent" />
+		  <Setter
+				Property="TextColor"
+				Value="{DynamicResource PrimaryDark}" />
+		  <Setter
+				Property="FontFamily"
+				Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+		  <Setter
+				Property="FontSize"
+				Value="Small" />
+		  <Setter
+				Property="MinimumHeightRequest"
+				Value="44" />
+		  <Setter
+				Property="MinimumWidthRequest"
+				Value="44" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="RefreshView">
+		  <Setter
+				Property="RefreshColor"
+				Value="{DynamicResource Gray900}" />
+	 </Style>
+
+	 <Style
+		  TargetType="SearchBar">
+		  <Setter
+				Property="TextColor"
+				Value="{DynamicResource Gray900}" />
+		  <Setter
+				Property="PlaceholderColor"
+				Value="{DynamicResource Gray500}" />
+		  <Setter
+				Property="CancelButtonColor"
+				Value="{DynamicResource Gray500}" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="Transparent" />
+		  <Setter
+				Property="FontFamily"
+				Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+		  <Setter
+				Property="FontSize"
+				Value="Small" />
+		  <Setter
+				Property="MinimumHeightRequest"
+				Value="44" />
+		  <Setter
+				Property="MinimumWidthRequest"
+				Value="44" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Gray300}" />
+									 <Setter
+										  Property="PlaceholderColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="SearchHandler">
+		  <Setter
+				Property="TextColor"
+				Value="{DynamicResource Gray900}" />
+		  <Setter
+				Property="PlaceholderColor"
+				Value="{DynamicResource Gray500}" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="Transparent" />
+		  <Setter
+				Property="FontFamily"
+				Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+		  <Setter
+				Property="FontSize"
+				Value="Small" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Gray300}" />
+									 <Setter
+										  Property="PlaceholderColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="Shadow">
+		  <Setter
+				Property="Radius"
+				Value="15" />
+		  <Setter
+				Property="Opacity"
+				Value="0.5" />
+		  <Setter
+				Property="Brush"
+				Value="{DynamicResource White}" />
+		  <Setter
+				Property="Offset"
+				Value="10,10" />
+	 </Style>
+
+	 <Style
+		  TargetType="Slider">
+		  <Setter
+				Property="MinimumTrackColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="MaximumTrackColor"
+				Value="{DynamicResource Gray200}" />
+		  <Setter
+				Property="ThumbColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="MinimumTrackColor"
+										  Value="{DynamicResource Gray300}" />
+									 <Setter
+										  Property="MaximumTrackColor"
+										  Value="{DynamicResource Gray300}" />
+									 <Setter
+										  Property="ThumbColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="SwipeItem">
+		  <Setter
+				Property="BackgroundColor"
+				Value="{DynamicResource White}" />
+	 </Style>
+
+	 <Style
+		  TargetType="Switch">
+		  <Setter
+				Property="OnColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="ThumbColor"
+				Value="{DynamicResource White}" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="OnColor"
+										  Value="{DynamicResource Gray300}" />
+									 <Setter
+										  Property="ThumbColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+						  <VisualState
+								x:Name="On">
+								<VisualState.Setters>
+									 <Setter
+										  Property="OnColor"
+										  Value="{DynamicResource Secondary}" />
+									 <Setter
+										  Property="ThumbColor"
+										  Value="{DynamicResource Primary}" />
+								</VisualState.Setters>
+						  </VisualState>
+						  <VisualState
+								x:Name="Off">
+								<VisualState.Setters>
+									 <Setter
+										  Property="ThumbColor"
+										  Value="{DynamicResource Gray400}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="TimePicker">
+		  <Setter
+				Property="TextColor"
+				Value="{DynamicResource Gray900}" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="Transparent" />
+		  <Setter
+				Property="FontFamily"
+				Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+		  <Setter
+				Property="FontSize"
+				Value="Small" />
+		  <Setter
+				Property="MinimumHeightRequest"
+				Value="44" />
+		  <Setter
+				Property="MinimumWidthRequest"
+				Value="44" />
+		  <Setter
+				Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					 <VisualStateGroup
+						  x:Name="CommonStates">
+						  <VisualState
+								x:Name="Normal" />
+						  <VisualState
+								x:Name="Disabled">
+								<VisualState.Setters>
+									 <Setter
+										  Property="TextColor"
+										  Value="{DynamicResource Gray300}" />
+								</VisualState.Setters>
+						  </VisualState>
+					 </VisualStateGroup>
+				</VisualStateGroupList>
+		  </Setter>
+	 </Style>
+
+	 <Style
+		  TargetType="Page"
+		  ApplyToDerivedTypes="True">
+		  <Setter
+				Property="Padding"
+				Value="0" />
+		  <Setter
+				Property="BackgroundColor"
+				Value="{DynamicResource White}" />
+	 </Style>
+
+	 <Style
+		  ApplyToDerivedTypes="True"
+		  TargetType="Shell">
+		  <Setter
+				Property="Shell.BackgroundColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="Shell.ForegroundColor"
+				Value="{OnPlatform WinUI={DynamicResource Primary}, Default={DynamicResource White}}" />
+		  <Setter
+				Property="Shell.TitleColor"
+				Value="{DynamicResource White}" />
+		  <Setter
+				Property="Shell.DisabledColor"
+				Value="{DynamicResource Gray200}" />
+		  <Setter
+				Property="Shell.UnselectedColor"
+				Value="{DynamicResource Gray200}" />
+		  <Setter
+				Property="Shell.NavBarHasShadow"
+				Value="False" />
+		  <Setter
+				Property="Shell.TabBarBackgroundColor"
+				Value="{DynamicResource White}" />
+		  <Setter
+				Property="Shell.TabBarForegroundColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="Shell.TabBarTitleColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="Shell.TabBarUnselectedColor"
+				Value="{DynamicResource Gray900}" />
+	 </Style>
+
+	 <Style
+		  TargetType="NavigationPage">
+		  <Setter
+				Property="BarBackgroundColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="BarTextColor"
+				Value="{DynamicResource PrimaryAccent}" />
+		  <Setter
+				Property="IconColor"
+				Value="{DynamicResource PrimaryAccent}" />
+	 </Style>
+
+	 <Style
+		  TargetType="TabbedPage">
+		  <Setter
+				Property="BarBackgroundColor"
+				Value="{DynamicResource White}" />
+		  <Setter
+				Property="BarTextColor"
+				Value="{DynamicResource Primary}" />
+		  <Setter
+				Property="UnselectedTabColor"
+				Value="{DynamicResource Gray200}" />
+		  <Setter
+				Property="SelectedTabColor"
+				Value="{DynamicResource Gray950}" />
+	 </Style>
+
+
+
+</ResourceDictionary>

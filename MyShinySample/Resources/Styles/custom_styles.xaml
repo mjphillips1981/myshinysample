@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+   xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+   xmlns:prism="http://prismlibrary.com">
+
+   <x:Double
+      x:Key="minheight">350</x:Double>
+   <Color
+      x:Key="red">DarkRed</Color>
+
+   <Style
+      TargetType="Grid"
+      x:Key="OuterGrid">
+      <Setter
+         Property="Padding"
+         Value="20,10,20,10" />
+   </Style>
+
+   <Style
+      TargetType="Grid">
+      <Setter
+         Property="Padding"
+         Value="0" />
+   </Style>
+   
+   <Style
+      x:Key="DialogLayout"
+      TargetType="AbsoluteLayout">
+      <Setter
+         Property="BackgroundColor"
+         Value="White" />
+      <Setter
+         Property="AbsoluteLayout.LayoutBounds"
+         Value="0.0,0.0,AutoSize,AutoSize" />
+   </Style>
+   
+   <Style
+      TargetType="Grid"
+      x:Key="DialogGrid">
+      <Setter
+         Property="MinimumHeightRequest"
+         Value="500" />
+      <Setter
+         Property="MaximumHeightRequest"
+         Value="600" />
+      <Setter
+         Property="MinimumWidthRequest"
+         Value="300" />
+      <Setter
+         Property="MaximumWidthRequest"
+         Value="300" />
+      <Setter
+         Property="Padding"
+         Value="20" />
+      <Setter
+         Property="BackgroundColor"
+         Value="White" />
+   </Style>
+
+   <Style
+      TargetType="ScrollView"
+      x:Key="DialogScrollView">
+      <Setter
+         Property="BackgroundColor"
+         Value="Transparent" />
+      <Setter
+         Property="Padding"
+         Value="20" />
+      <Setter
+         Property="HorizontalOptions"
+         Value="Fill" />
+      <Setter
+         Property="VerticalOptions"
+         Value="FillAndExpand" />
+      <Setter
+         Property="AbsoluteLayout.LayoutBounds"
+         Value="0.0, 0.0, 300, AutoSize" />
+      <Setter
+         Property="AbsoluteLayout.LayoutFlags"
+         Value="None"  />
+   </Style>
+   
+   <Style
+      TargetType="ScrollView">
+      <Setter
+         Property="Orientation"
+         Value="Vertical" />
+      <Setter
+         Property="VerticalOptions"
+         Value="FillAndExpand" />
+      <Setter
+         Property="HorizontalOptions"
+         Value="FillAndExpand" />
+      <Setter
+         Property="VerticalScrollBarVisibility"
+         Value="Always" />
+   </Style>
+
+   <Style
+      x:Key="InvalidEntryStyle"
+      TargetType="Entry">
+      <!--<Setter
+         Property="ClearButtonVisibility"
+         Value="WhileEditing" />-->
+      <Setter
+         Property="FontFamily"
+         Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+      <Setter
+         Property="FontAutoScalingEnabled"
+         Value="False" />
+      <Setter
+         Property="TextColor"
+         Value="{StaticResource DarkRed}" />
+   </Style>
+   <Style
+      x:Key="ValidEntryStyle"
+      TargetType="Entry">
+      <!--<Setter
+         Property="ClearButtonVisibility"
+         Value="WhileEditing" />-->
+      <Setter
+         Property="FontFamily"
+         Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+      <Setter
+         Property="FontAutoScalingEnabled"
+         Value="False" />
+      <Setter
+         Property="TextColor"
+         Value="{StaticResource PrimaryDark}" />
+   </Style>
+
+   <Style
+      x:Key="CancelButton"
+      TargetType="Button">
+      <Setter
+         Property="FontAutoScalingEnabled"
+         Value="False" />
+      <Setter
+         Property="FontFamily"
+         Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+      <Setter
+         Property="FontSize"
+         Value="Medium" />
+      <Setter
+         Property="CornerRadius"
+         Value="0" />
+      <Setter
+         Property="Padding"
+         Value="14,10" />
+      <Setter
+         Property="VisualStateManager.VisualStateGroups">
+         <VisualStateGroupList>
+            <VisualStateGroup
+               x:Name="CommonStates">
+               <VisualState
+                  x:Name="Normal">
+                  <VisualState.Setters>
+                     <Setter
+                        Property="TextColor"
+                        Value="{DynamicResource White}" />
+                     <Setter
+                        Property="Background"
+                        Value="PaleVioletRed" />
+                  </VisualState.Setters>
+               </VisualState>
+
+               <VisualState
+                  x:Name="Pressed">
+                  <VisualState.Setters>
+                     <Setter
+                        Property="TextColor"
+                        Value="{DynamicResource Primary}" />
+                     <Setter
+                        Property="Background"
+                        Value="{DynamicResource White}" />
+                  </VisualState.Setters>
+               </VisualState>
+            </VisualStateGroup>
+         </VisualStateGroupList>
+      </Setter>
+   </Style>
+
+   <Style
+      x:Key="UpDownButton"
+      TargetType="ImageButton">
+      <Setter
+         Property="VisualStateManager.VisualStateGroups">
+         <VisualStateGroupList>
+            <VisualStateGroup
+               x:Name="CommonStates">
+               <VisualState
+                  x:Name="Normal">
+                  <VisualState.Setters>
+                     <Setter
+                        Property="Background"
+                        Value="Transparent" />
+                  </VisualState.Setters>
+               </VisualState>
+
+               <VisualState
+                  x:Name="Pressed">
+                  <VisualState.Setters>
+                     <Setter
+                        Property="Background"
+                        Value="{DynamicResource PrimaryLight}" />
+                  </VisualState.Setters>
+               </VisualState>
+            </VisualStateGroup>
+         </VisualStateGroupList>
+      </Setter>
+   </Style>
+
+
+
+   <Style
+      x:Key="NumericLabel"
+      TargetType="Label">
+      <Setter
+         Property="FontFamily"
+         Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+      <Setter
+         Property="FontAutoScalingEnabled"
+         Value="False" />
+      <Setter
+         Property="TextColor"
+         Value="{DynamicResource PrimaryDark}" />
+      <Setter
+         Property="BackgroundColor"
+         Value="Transparent" />
+      <Setter
+         Property="FontAttributes"
+         Value="Bold" />
+      <Setter
+         Property="FontSize"
+         Value="Medium" />
+      <Setter
+         Property="HorizontalTextAlignment"
+         Value="Center" />
+      <Setter
+         Property="VerticalTextAlignment"
+         Value="Center" />
+   </Style>
+
+   <Style
+      x:Key="PromptEntry"
+      TargetType="Entry">
+      <!--<Setter
+         Property="ClearButtonVisibility"
+         Value="WhileEditing" />-->
+      <Setter
+         Property="FontFamily"
+         Value="{OnPlatform iOS='', Default='OpenSansRegular'}" />
+      <Setter
+         Property="FontAutoScalingEnabled"
+         Value="False" />
+      <Setter
+         Property="TextColor"
+         Value="{DynamicResource PrimaryDark}" />
+      <Setter
+         Property="BackgroundColor"
+         Value="Transparent" />
+      <Setter
+         Property="FontAttributes"
+         Value="Bold" />
+      <Setter
+         Property="FontSize"
+         Value="Medium" />
+      <Setter
+         Property="HorizontalTextAlignment"
+         Value="Center" />
+      <Setter
+         Property="VerticalTextAlignment"
+         Value="Center" />
+   </Style>
+
+   <Style
+      TargetType="prism:PrismNavigationPage">
+      <Setter
+         Property="BarBackgroundColor"
+         Value="{DynamicResource Primary}" />
+      <Setter
+         Property="BarTextColor"
+         Value="{DynamicResource PrimaryAccent}" />
+      <Setter
+         Property="IconColor"
+         Value="{DynamicResource PrimaryAccent}" />
+   </Style>
+
+</ResourceDictionary>

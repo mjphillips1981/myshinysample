@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+	 xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+	 <Color
+		  x:Key="spartan_dark_green">#123a1b</Color>
+	 <Color
+		  x:Key="spartan_green">#17572c</Color>
+	 <Color
+		  x:Key="spartan_light_green">#869d89</Color>
+	 <Color
+		  x:Key="spartan_gold">#d69f0f</Color>
+	 <!--<Color
+      x:Key="spartan_gold">#e2bc57</Color>-->
+	 <Color
+		  x:Key="spartan_gray">#bdbdbd</Color>
+
+	 <Color
+		  x:Key="Primary">#17572c</Color>
+	 <Color
+		  x:Key="PrimaryDark">#123a1b</Color>
+	 <Color
+		  x:Key="PrimaryLight">#869d89</Color>
+	 <Color
+		  x:Key="PrimaryAccent">#d69f0f</Color>
+	 <!--<Color
+      x:Key="PrimaryAccent">#e2bc57</Color>-->
+	 <Color
+		  x:Key="DarkRed">DarkRed</Color>
+	 <Color
+		  x:Key="Red">Red</Color>
+	 <Color
+		  x:Key="Green">Green</Color>
+	 <Color
+		  x:Key="Transparent">Transparent</Color>
+	 <Color
+		  x:Key="Secondary">#DFD8F7</Color>
+	 <Color
+		  x:Key="Tertiary">#7E7D81</Color>
+	 <Color
+		  x:Key="White">White</Color>
+	 <Color
+		  x:Key="Black">Black</Color>
+	 <Color
+		  x:Key="Gray100">#E1E1E1</Color>
+	 <Color
+		  x:Key="Gray200">#C8C8C8</Color>
+	 <Color
+		  x:Key="Gray300">#ACACAC</Color>
+	 <Color
+		  x:Key="Gray400">#919191</Color>
+	 <Color
+		  x:Key="Gray500">#6E6E6E</Color>
+	 <Color
+		  x:Key="Gray600">#404040</Color>
+	 <Color
+		  x:Key="Gray900">#212121</Color>
+	 <Color
+		  x:Key="Gray950">#141414</Color>
+	 <SolidColorBrush
+		  x:Key="PrimaryBrush"
+		  Color="{DynamicResource Primary}" />
+	 <SolidColorBrush
+		  x:Key="SecondaryBrush"
+		  Color="{DynamicResource Secondary}" />
+	 <SolidColorBrush
+		  x:Key="TertiaryBrush"
+		  Color="{DynamicResource Tertiary}" />
+	 <SolidColorBrush
+		  x:Key="WhiteBrush"
+		  Color="{DynamicResource White}" />
+	 <SolidColorBrush
+		  x:Key="BlackBrush"
+		  Color="{DynamicResource Black}" />
+	 <SolidColorBrush
+		  x:Key="Gray100Brush"
+		  Color="{DynamicResource Gray100}" />
+	 <SolidColorBrush
+		  x:Key="Gray200Brush"
+		  Color="{DynamicResource Gray200}" />
+	 <SolidColorBrush
+		  x:Key="Gray300Brush"
+		  Color="{DynamicResource Gray300}" />
+	 <SolidColorBrush
+		  x:Key="Gray400Brush"
+		  Color="{DynamicResource Gray400}" />
+	 <SolidColorBrush
+		  x:Key="Gray500Brush"
+		  Color="{DynamicResource Gray500}" />
+	 <SolidColorBrush
+		  x:Key="Gray600Brush"
+		  Color="{DynamicResource Gray600}" />
+	 <SolidColorBrush
+		  x:Key="Gray900Brush"
+		  Color="{DynamicResource Gray900}" />
+	 <SolidColorBrush
+		  x:Key="Gray950Brush"
+		  Color="{DynamicResource Gray950}" />
+
+	 <Color
+		  x:Key="Yellow100Accent">#F7B548</Color>
+	 <Color
+		  x:Key="Yellow200Accent">#FFD590</Color>
+	 <Color
+		  x:Key="Yellow300Accent">#FFE5B9</Color>
+	 <Color
+		  x:Key="Cyan100Accent">#28C2D1</Color>
+	 <Color
+		  x:Key="Cyan200Accent">#7BDDEF</Color>
+	 <Color
+		  x:Key="Cyan300Accent">#C3F2F4</Color>
+	 <Color
+		  x:Key="Blue100Accent">#3E8EED</Color>
+	 <Color
+		  x:Key="Blue200Accent">#72ACF1</Color>
+	 <Color
+		  x:Key="Blue300Accent">#A7CBF6</Color>
+
+	 <OnIdiom
+		  x:Key="PageSpacing"
+		  x:TypeArguments="x:Double"
+		  Phone="20"
+		  Tablet="30" />
+	 <OnIdiom
+		  x:Key="PagePadding"
+		  x:TypeArguments="Thickness"
+		  Phone="20"
+		  Tablet="30" />
+	 <Color
+		  x:Key="canfield_blue">#1190ca</Color>
+	 <Color
+		  x:Key="canfield_blue_accent">#11a8ca</Color>
+	 <Color
+		  x:Key="canfield_light_blue">#a9cded</Color>
+	 <Color
+		  x:Key="canfield_dark_blue">#0b5275</Color>
+
+	 <Color
+		  x:Key="PrimaryColor">#17572c</Color>
+	 <Color
+		  x:Key="PrimaryColorLight">#a9cded</Color>
+	 <Color
+		  x:Key="PrimaryColorDark">#0b5275</Color>
+	 <Color
+		  x:Key="PrimaryColorAccent">#11a8ca</Color>
+	 <Color
+		  x:Key="UnselectButtonColor">Gray</Color>
+
+	 <Color
+		  x:Key="ActivityIndicatorDark">#0b5275</Color>
+	 <Color
+		  x:Key="ActivityIndicatorLight">#a9cded</Color>
+
+	 <Color
+		  x:Key="SplashPageBackgroundColor">#FFFFFF</Color>
+	 <Color
+		  x:Key="PageBackgroundColor">#1190ca</Color>
+	 <Color
+		  x:Key="PageBackgroundColorLight">#a9cded</Color>
+	 <Color
+		  x:Key="PageBackgroundColorDark">#0b5275</Color>
+
+	 <Color
+		  x:Key="FlyoutMenuTextColor">#a9cded</Color>
+
+	 <Color
+		  x:Key="NavigationBarColor">#1190ca</Color>
+	 <Color
+		  x:Key="NavigationBarTextColor">White</Color>
+
+	 <Color
+		  x:Key="PrimaryTextColor">#0b5275</Color>
+	 <Color
+		  x:Key="SecondaryTextColor">#1190ca</Color>
+	 <Color
+		  x:Key="LightTextColor">#a9cded</Color>
+
+	 <Color
+		  x:Key="FrameBackgroundColor">#a9cded</Color>
+	 <Color
+		  x:Key="FrameBorderColor">#0b5275</Color>
+
+	 <Color
+		  x:Key="BorderFrameColor">#0b5275</Color>
+
+	 <Color
+		  x:Key="DialogFrameBackgroundColor">#a9cded</Color>
+	 <Color
+		  x:Key="DialogFrameBorderColor">#0b5275</Color>
+
+	 <Color
+		  x:Key="ReadOnlyEntryBackgroundColor">#0b5275</Color>
+	 <Color
+		  x:Key="ReadOnlyEntryTextColor">#000000</Color>
+	 <Color
+		  x:Key="ReadOnlyEntryPlaceholderColor">#1190ca</Color>
+
+	 <Color
+		  x:Key="EntryBackgroundColor">#a9cded</Color>
+	 <Color
+		  x:Key="EntryTextColor">#0b5275</Color>
+	 <Color
+		  x:Key="EntryPlaceholderColor">#0b5275</Color>
+	 <Color
+		  x:Key="EntryFocusedColor">#11a8ca</Color>
+	 <Color
+		  x:Key="EntryUnfocusedColor">#0b5275</Color>
+
+	 <Color
+		  x:Key="ButtonBackgroundColor">#c8c9cc</Color>
+	 <Color
+		  x:Key="ButtonTextColor">#1190ca</Color>
+
+	 <Color
+		  x:Key="TertiaryTextColor">Gray</Color>
+	 <Color
+		  x:Key="TransparentColor">Transparent</Color>
+
+	 <Color
+		  x:Key="CheckBoxCheckedColor">#0b5275</Color>
+	 <Color
+		  x:Key="CheckBoxUncheckedColor">#0b5275</Color>
+	 <Color
+		  x:Key="CheckBoxTickColor">#c8c9cc</Color>
+
+	 <Color
+		  x:Key="GaugeRimColor">#0b5275</Color>
+	 <Color
+		  x:Key="GaugeRangeColor">#0b5275</Color>
+	 <Color
+		  x:Key="GaugeRangePointerColor">#0b5275</Color>
+	 <Color
+		  x:Key="GaugeHeaderTextColor">#0b5275</Color>
+	 <Color
+		  x:Key="GaugeNeedleColor">#0b5275</Color>
+	 <Color
+		  x:Key="GaugeMarkerColor">#0b5275</Color>
+	 <Color
+		  x:Key="GaugeMarkerPointerColor">#0b5275</Color>
+	 <Color
+		  x:Key="GaugeIntervalTextColor">#0b5275</Color>
+	 <Color
+		  x:Key="GaugeTickColor">#0b5275</Color>
+
+	 <Color
+		  x:Key="LoadingSpinnerColor">#1190ca</Color>
+
+	 <Color
+		  x:Key="ConfigTextDarkColor">#1190ca</Color>
+	 <Color
+		  x:Key="ConfigTextLightColor">#a9cded</Color>
+	 <Color
+		  x:Key="ConfigBackgroundDarkColor">#1190ca</Color>
+	 <Color
+		  x:Key="ConfigBackgroundLightColor">#a9cded</Color>
+
+</ResourceDictionary>
