@@ -46,7 +46,10 @@ namespace MyShinySample
 						 IsScanning = true;
 
 						 scanSub = bleManager
-								 .Scan()
+								 .Scan(new ScanConfig
+								 {
+									 ServiceUuids = new[] { "6e400001-b5a3-f393-e0a9-e50e24dcca9e" }
+								 })
 								 .Buffer(TimeSpan.FromSeconds(1))
 								 .Where(x => x?.Any() ?? false)
 								 .SubOnMainThread(

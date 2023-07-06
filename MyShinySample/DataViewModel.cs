@@ -31,78 +31,60 @@ namespace MyShinySample
 
 		IPeripheral? _peripheral;
 		BleCharacteristicInfo? _tXCharacteristic;
+		BleCharacteristicInfo? _rXCharacteristic;
 
-		CompositeDisposable? deactivateWith;
-		protected internal CompositeDisposable DeactivateWith => deactivateWith ?? (deactivateWith = new CompositeDisposable());
+		//CompositeDisposable? deactivateWith;
+		//protected internal CompositeDisposable DeactivateWith => deactivateWith ?? (deactivateWith = new CompositeDisposable());
+
+		IDisposable? _disposable;
+		IDisposable _disposable2;
 
 
 		void LoadCommandExecuted()
 		{
-			_peripheral
-				.WhenDisconnected()
-				.SubOnMainThread(async x =>
-				{
-					if (DeviceIsConnected)
-					{
-						await Navigation.GoBackToRootAsync();
-					}
-				}).DisposeWith(DeactivateWith);
+			//_peripheral
+			//	.WhenDisconnected()
+			//	.SubOnMainThread(async x =>
+			//	{
+			//		if (DeviceIsConnected)
+			//		{
+			//			//await Navigation.GoBackToRootAsync();
+			//			Stop();
+			//		}
+			//	}).DisposeWith(DeactivateWith);
 		}
 
 		async Task ConnectToDeviceExecuted()
 		{
-			IList<BleServiceInfo> Services;
-			BleServiceInfo myservice = null!;
-			List<BleCharacteristicInfo> Characteristics;
-
 			IsBusy = true;
 			Title = "Connecting...";
-
 			try
 			{
-				var services = await _peripheral.WithConnectIf()
-					.Select(x => x.GetServices())
-					.Switch()
-					.ToTask();
+				await _peripheral.WithConnectIf(new ConnectionConfig { AutoConnect = false });
 
-				Services = services.ToList();
+				_rXCharacteristic = await _peripheral.GetCharacteristicAsync(_uartGattServiceId, _uartGattCharacteristicReceiveId);
 
-				foreach (var service in Services)
+				if (_rXCharacteristic != null)
 				{
-					if (service.Uuid.Equals(_uartGattServiceId))
-					{
-						myservice = service;
-						break;
-					}
+					//var _rx = await _peripheral.NotifyCharacteristic(_rXCharacteristic);
+
+					Debug.WriteLine("made it here");
+
+					_disposable = _peripheral
+						.NotifyCharacteristic(_rXCharacteristic)
+						.SubOnMainThread(x =>
+						{
+							DataFromDevice = x.Data == null ? "NO DATA" : Encoding.UTF8.GetString(x.Data);
+
+							Debug.WriteLine(DataFromDevice);
+						}, ex => Debug.WriteLine("GATT ERROR: " + ex.Message));
 				}
 
-				if (myservice != null)
+				_tXCharacteristic = await _peripheral.GetCharacteristicAsync(_uartGattServiceId, _uartGattCharacteristicSendId);
+
+				if (_tXCharacteristic != null)
 				{
-					Characteristics = (await _peripheral!.GetCharacteristicsAsync(myservice.Uuid)).ToList();
-
-					foreach (var characteristic in Characteristics)
-					{
-						if (characteristic.Uuid.Equals(_uartGattCharacteristicSendId))
-						{
-							_tXCharacteristic = characteristic;
-
-							NegotMTU.Execute(null);
-
-							Debug.WriteLine("got tx");
-						}
-						else if (characteristic.Uuid.Equals(_uartGattCharacteristicReceiveId))
-						{
-							_peripheral
-								.NotifyCharacteristic(characteristic)
-								.SubOnMainThread(x =>
-								{
-									DataFromDevice = x.Data == null ? "NO DATA" : Encoding.UTF8.GetString(x.Data);
-								}, ex => Debug.WriteLine("GATT ERROR: " + ex.Message))
-								.DisposeWith(DeactivateWith);
-
-							Debug.WriteLine("got rx");
-						}
-					}
+					NegotMTU.Execute(null);
 				}
 			}
 			catch (Exception ex)
@@ -123,10 +105,10 @@ namespace MyShinySample
 
 				var results = _peripheral.Mtu;
 
-				if (results < 57)
-				{
+				//if (results < 57)
+				//{
 					results = await _peripheral.TryRequestMtuAsync(60);
-				}
+				//}
 
 				Debug.WriteLine($"result: {results}");
 
@@ -167,12 +149,26 @@ namespace MyShinySample
 
 		void Stop()
 		{
-			deactivateWith.Dispose();
-			deactivateWith = null;
-			_tXCharacteristic = null;
-			DeviceIsConnected = false;
+			Debug.WriteLine("stopping");
+
 			_peripheral.CancelConnection();
-			_peripheral = null;
+
+			_disposable.Dispose();
+			_disposable = null;
+
+			_tXCharacteristic = null;
+
+			if (_rXCharacteristic.IsNotifying)
+			{
+				_rXCharacteristic = null;
+			}
+
+			DeviceIsConnected = false;
+
+			DataFromDevice = "";
+			this.RaisePropertyChanged(nameof(DataFromDevice));
+
+			//_peripheral = null;
 		}
 
 		async void OnButtonCommandExecuted(string cmd)
@@ -180,7 +176,23 @@ namespace MyShinySample
 			switch (cmd)
 			{
 				case "RequestStatus":
-					WriteToDevice($"RS=1\0");
+					if (DeviceIsConnected)
+					{
+						WriteToDevice($"RS=1\0");
+					}
+					break;
+
+				case "Connect":
+					if (!DeviceIsConnected)
+					{
+						ConnectToDeviceCommand.Execute(null);
+					}
+					break;
+				case "Disconnect":
+					if (DeviceIsConnected)
+					{
+						Stop();
+					}
 					break;
 			}
 		}

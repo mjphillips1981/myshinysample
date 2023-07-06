@@ -21,10 +21,21 @@ public class MyBleDelegate : BleDelegate
 	{
 		Debug.WriteLine($"MyBleDelegate: BLE Device Status {peripheral.Status}");
 
-		if (peripheral.Status == ConnectionState.Connected)
-			_ = _dialogs.Snackbar($"{peripheral.Name} Connected", 1000);
-		else
-			_ = _dialogs.Snackbar($"{peripheral.Name} Disconnected", 1000);
+		switch (peripheral.Status)
+		{
+			case ConnectionState.Connected:
+				_ = _dialogs.Snackbar($"{peripheral.Name} Connected", 1000);
+				break;
+			case ConnectionState.Disconnected:
+				_ = _dialogs.Snackbar($"{peripheral.Name} Disconnected", 1000);
+				break;
+			case ConnectionState.Disconnecting:
+				_ = _dialogs.Snackbar($"{peripheral.Name} Disconnecting", 1000);
+				break;
+			case ConnectionState.Connecting:
+				_ = _dialogs.Snackbar($"{peripheral.Name} Connecting", 1000);
+				break;
+		}
 
 		return Task.CompletedTask;
 	}
